@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_cmiller241_CalculatorTest_1715366059793-push-trigger-input-set
+  identifier: Build_cmiller241_CalculatorTest_1715366059793pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Calculator
+  pipeline:
+    identifier: Build_cmiller241_CalculatorTest_1715366059793
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
