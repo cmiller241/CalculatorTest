@@ -1,0 +1,35 @@
+pipeline:
+  identifier: Build_cmiller241_CalculatorTest_1715365195564
+  name: Build CalculatorTest
+  orgIdentifier: default
+  projectIdentifier: Calculator
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.Github_OAuth_1715118214843
+        repoName: cmiller241/CalculatorTest
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          caching:
+            enabled: true
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: echo
+                  name: echo
+                  spec:
+                    command: echo hello world
+                  timeout: ""
+                  type: Run
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
