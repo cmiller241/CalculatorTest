@@ -33,7 +33,7 @@ pipeline:
                   spec:
                     shell: Sh
                     command: |-
-                      javac src/main/harnessio/Calculator.java
+                      javac src/main/java/harnessio/Calculator.java
                       java -cp src/main/java harnessio.Calculator
           platform:
             os: Linux
