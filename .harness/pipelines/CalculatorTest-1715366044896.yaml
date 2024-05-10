@@ -26,10 +26,20 @@ pipeline:
                     command: echo hello world
                   timeout: ""
                   type: Run
+              - step:
+                  type: Run
+                  name: Run Java Application
+                  identifier: Run_Java_Application
+                  spec:
+                    shell: Sh
+                    command: |-
+                      javac Calculator.java
+                      java Calculator
           platform:
-            arch: Amd64
             os: Linux
+            arch: Amd64
           runtime:
-            spec: {}
             type: Cloud
+            spec: {}
         type: CI
+        description: ""
