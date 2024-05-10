@@ -20,13 +20,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  identifier: echo
-                  name: echo
-                  spec:
-                    command: echo hello world
-                  timeout: ""
-                  type: Run
-              - step:
                   type: Run
                   name: Build and Run Java Application
                   identifier: Run_Java_Application
