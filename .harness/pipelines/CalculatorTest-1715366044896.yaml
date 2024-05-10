@@ -51,6 +51,16 @@ pipeline:
                           - "**/*.xml"
                     enableTestSplitting: false
                   description: Run Maven Tests
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: Dockerize Code
+                  identifier: Dockerize_Code
+                  spec:
+                    connectorRef: account.harnessImage
+                    repo: cmiller241/Calculator
+                    tags:
+                      - Calculator
+                      - Testing
           platform:
             os: Linux
             arch: Amd64
