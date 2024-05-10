@@ -28,13 +28,23 @@ pipeline:
                   type: Run
               - step:
                   type: Run
-                  name: Run Java Application
+                  name: Build and Run Java Application
                   identifier: Run_Java_Application
                   spec:
                     shell: Sh
                     command: |-
                       javac src/main/java/harnessio/Calculator.java
                       java -cp src/main/java harnessio.Calculator
+              - step:
+                  type: Run
+                  name: Run Tests
+                  identifier: Run_Tests
+                  spec:
+                    shell: Sh
+                    command: |-
+                      mvn test-compile  
+                      mvn test
+                  description: Run Maven tests.
           platform:
             os: Linux
             arch: Amd64
