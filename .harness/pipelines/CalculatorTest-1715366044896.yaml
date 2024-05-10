@@ -36,15 +36,21 @@ pipeline:
                       javac src/main/java/harnessio/Calculator.java
                       java -cp src/main/java harnessio.Calculator
               - step:
-                  type: Run
-                  name: Run Tests
-                  identifier: Run_Tests
+                  type: RunTests
+                  name: Run Maven Tests
+                  identifier: Run_Maven_Tests
                   spec:
-                    shell: Sh
-                    command: |-
-                      mvn test-compile  
-                      mvn test
-                  description: Run Maven tests.
+                    language: Java
+                    buildTool: Maven
+                    args: clean test
+                    runOnlySelectedTests: true
+                    reports:
+                      type: JUnit
+                      spec:
+                        paths:
+                          - "**/*.xml"
+                    enableTestSplitting: false
+                  description: Run Maven Tests
           platform:
             os: Linux
             arch: Amd64
