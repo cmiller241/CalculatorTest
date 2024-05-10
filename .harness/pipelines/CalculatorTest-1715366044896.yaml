@@ -49,8 +49,8 @@ pipeline:
                   name: Dockerize Code
                   identifier: Dockerize_Code
                   spec:
-                    connectorRef: <+input>
-                    repo: <+input>
+                    connectorRef: account.harnessImage
+                    repo: cmiller241/calculator
                     tags:
                       - Calculator
                       - Testing
