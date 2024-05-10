@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_cmiller241_CalculatorTest_1715366059793-pr-trigger-input-set
+  identifier: Build_cmiller241_CalculatorTest_1715366059793prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Calculator
+  pipeline:
+    identifier: Build_cmiller241_CalculatorTest_1715366059793
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
