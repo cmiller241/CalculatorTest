@@ -8,4 +8,4 @@ COPY src/main/java/harnessio/Calculator.java /
 RUN javac /Calculator.java  
   
 # Set the entry point to run the Calculator application  
-ENTRYPOINT ["java", "-cp", "bin", "harnessio.Calculator"]  
+ENTRYPOINT ["java", "-cp", "bin", "Calculator"]  
